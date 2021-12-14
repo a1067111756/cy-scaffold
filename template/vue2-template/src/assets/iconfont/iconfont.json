@@ -1,0 +1,30 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "21500991",
+      "name": "客户总览",
+      "font_class": "kehuzonglan",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "21500992",
+      "name": "设置",
+      "font_class": "shezhi",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "21500993",
+      "name": "帮助",
+      "font_class": "bangzhu",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "name": "cy-cli",
+  "version": "0.0.1",
+  "description": "a code template generate scaffold cli tool",
+  "type": "module",
+  "exports": "./index.js",
+  "bin": {
+    "cy": "bin/cy.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "chengyu",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "chalk": "^5.0.0",
+    "commander": "^8.3.0",
+    "cross-spawn": "^7.0.3",
+    "download-git-repo": "^3.0.2",
+    "figlet": "^1.5.2",
+    "fs-extra": "^10.0.0",
+    "inquirer": "^8.2.0",
+    "ora": "^6.0.1",
+    "util": "^0.12.4"
+  }
+}
