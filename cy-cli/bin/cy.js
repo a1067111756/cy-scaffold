@@ -7,11 +7,8 @@ program
   // 定义命令和参数
   .command('create <app-name>')
   .description('create a new project')
-  // -f or --force 为强制创建，如果创建的目录存在则直接覆盖
-  .option('-f, --force', 'overwrite target directory if it exist')
-  .action((name, options) => {
-    createCommand(name, options)
-  })
+  .option('-c, --copy', 'copy template code to new project if it exist')
+  .action((name, options) => createCommand(name, options))
 
 // 配置版本信息
 program

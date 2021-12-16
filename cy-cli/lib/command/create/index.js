@@ -1,15 +1,21 @@
 /* cy create <app-name> 命令action */
 import path from 'path'
 import fs from 'fs-extra'
+import chalk from 'chalk'
 import inquirer from 'inquirer'
-import { getTemplateList } from './http.js'
-import ora from "ora";
+import { pathConfig } from '../../config.js'
+import { getTemplateList, downloadTemplate } from './http.js'
 
 export default async function (name, options) {
-  // 判断目录是否存在
-  const cwd  = process.cwd()
-  const targetDir = path.join(cwd, name)
-  const isExist = await fs.exists(targetDir)
+  if (!options.copy) {
+    console.log(chalk.red('create 命令暂时只支持--copy选项'))
+    return
+  }
+
+  // 初始化基础路径
+  pathConfig.basePath = path.join(process.cwd(), name)
+  pathConfig.dTemplatePath = path.join(pathConfig.basePath, 'dist')
+  const isExist = await fs.exists(pathConfig.basePath)
 
   // 存在, 询问用户是否进行覆盖？
   if (isExist) {
@@ -37,14 +43,9 @@ export default async function (name, options) {
     }
 
     if (action === 'overwrite') {
-      await fs.remove(targetDir)
+      fs.emptyDirSync(pathConfig.basePath)
     }
   }
-
-  // 创建项目
-  // const generator = new Generator(name, targetDir);
-  // await generator.create()
-
 
   // 拉取代码模板列表
   const templateList = await getTemplateList()
@@ -53,30 +54,24 @@ export default async function (name, options) {
   }
 
   // 询问用户选择模板
-  console.log('请选择模板')
+  const { template } = await inquirer.prompt({
+    name: 'template',
+    type: 'list',
+    choices: templateList,
+    message: 'Please choose a template to create project'
+  })
 
   // 下载模板
+  const templateRes = await downloadTemplate(template)
+  if (!templateRes) {
+    return
+  }
+
+  // 成功提示
+  console.log(`${chalk.green('Successfully')} created project ${chalk.cyan(name)}`)
+  console.log(`  cd ${chalk.cyan(name)}`)
+  console.log('  yarn install')
+  console.log('  yarn run dev\r\n')
 }
 
-
-// 拉取模板列表
-// async function getRepo () {
-//   // 1）从远程拉取模板数据
-//   const repoList = await wrapLoading(getRepoList, 'waiting fetch template');
-//   if (!repoList) return;
-//
-//   // 过滤我们需要的模板名称
-//   const repos = repoList.map(item => item.name);
-//
-//   // 2）用户选择自己新下载的模板名称
-//   const { repo } = await inquirer.prompt({
-//     name: 'repo',
-//     type: 'list',
-//     choices: repos,
-//     message: 'Please choose a template to create project'
-//   })
-//
-//   // 3）return 用户选择的名称
-//   return repo;
-// }
 
