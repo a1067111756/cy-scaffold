@@ -1,5 +1,5 @@
 {
-  "name": "cy-cli",
+  "name": "cyu-cli",
   "version": "0.0.1",
   "description": "a code template generate scaffold cli tool",
   "type": "module",

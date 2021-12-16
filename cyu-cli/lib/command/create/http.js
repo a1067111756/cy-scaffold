@@ -18,7 +18,7 @@ export async function getTemplateList() {
   spinner.start()
 
   return axios
-      .get('https://api.github.com/repos/a1067111756/cy-scaffold/contents/template')
+      .get('https://api.github.com/repos/a1067111756/cyu-scaffold/contents/template')
       .then(data => data.map(item => item.name))
       .catch(() => {
         spinner.fail('fetch template failed, please check your network!')
@@ -35,7 +35,7 @@ export async function downloadTemplate(templateName) {
 
     // 下载模板文件
     return axios({
-        url: 'https://api.github.com/repos/a1067111756/cy-scaffold/zipball/main',
+        url: 'https://api.github.com/repos/a1067111756/cyu-scaffold/zipball/main',
         method: 'GET',
         responseType: 'stream'
     })
