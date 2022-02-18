@@ -1,0 +1,53 @@
+{
+  "env": {
+    "es2021": true,
+    "node": true,
+    "browser": true
+  },
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:vue/vue3-recommended",
+    "eslint:recommended"
+  ],
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser",
+    "ecmaVersion": 12,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "ignorePatterns": [
+    "types/env.d.ts",
+    "node_modules/**",
+    "**/dist/**"
+  ],
+  "globals": {
+    "API": "readonly",
+    "MODEL": "readonly",
+    "defineProps": "readonly",
+    "defineEmits": "readonly",
+    "defineExpose": "readonly",
+    "vconsole": "readonly",
+    "LocalTango": "readonly"
+  },
+  "rules": {
+    "@typescript-eslint/no-unused-vars": "error",
+    /* 对象末多一个逗号 */
+    "comma-dangle": ["warn", "never"],
+    /* 单引号 */
+    "quotes": ["warn", "single"],
+    /* 允许使用any类型 */
+    "@typescript-eslint/no-explicit-any": ["off"],
+    /* 允许最多3个属性排列一行 */
+    "vue/max-attributes-per-line": ["error", {
+      "singleline": 3,
+      "multiline": { "max": 1, "allowFirstLine": false }
+    }],
+    /* 函数必须显示声明返回类型 */
+    "@typescript-eslint/explicit-module-boundary-types": ["off"]
+  }
+}

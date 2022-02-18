@@ -1,0 +1,16 @@
+/* 全局浏览器基本样式重置 */
+// 所有元素使用border-box盒模型
+* {
+  box-sizing: border-box;
+}
+
+// html, body标签宽高100%
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+// 去除p标签的外边距
+p {
+  margin: 0;
+}
