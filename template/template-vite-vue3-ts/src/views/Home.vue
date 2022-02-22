@@ -1,13 +1,27 @@
 <template>
   <div class="page-home__container">
     <div class="flex flex-col items-center">
-      <img alt="Vue logo" src="@/assets/logo.png" />
+      <img alt="Vue logo" src="@/assets/logo.png">
       <div>
         <span v-title>count: {{ $store.getters.count }}</span>
-        <button class="ml-20px" @click="onAddClick">点击+1</button>
+        <button class="ml-20px" @click="onAddClick">
+          点击+1
+        </button>
       </div>
 
       <global-example class="mt-20px" />
+
+      <button class="ml-20px" @click="$router.push('/401')">
+        401
+      </button>
+
+      <button class="ml-20px" @click="$router.push('/404')">
+        404
+      </button>
+
+      <button class="ml-20px" @click="$router.push('/500')">
+        500
+      </button>
     </div>
   </div>
 </template>
@@ -23,6 +37,7 @@
   const onAddClick = () => {
     store.dispatch('example/addCount')
     vconsole.log('test', `你点击了增加按钮：${store.getters.count}`)
+
     request.get('https://www.fastmock.site/mock/0370a6398e401668cbe97c67d017cfde/unifyAccess/auth/captcha')
   }
 </script>

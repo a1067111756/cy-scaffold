@@ -1,6 +1,6 @@
 /* 测试全局组件 */
 <template>
-  <p>{{msg}}</p>
+  <p>{{ msg }}</p>
 </template>
 
 <script lang="ts">

@@ -11,14 +11,16 @@
     "lint:fix": "eslint --fix --ext .js,.ts,.vue,.jsx,.tsx src"
   },
   "dependencies": {
-    "@achengyu/vconsole": "^0.0.5",
+    "@achengyu/vconsole": "^0.0.6",
+    "@element-plus/icons-vue": "^0.2.7",
     "axios": "^0.21.1",
     "element-plus": "^2.0.2",
-    "local-tango": "^0.0.2",
+    "local-tango": "^0.0.4",
     "mitt": "^3.0.0",
     "normalize.css": "^8.0.1",
     "vue": "^3.0.5",
     "vue-router": "4",
+    "vue3-lottie": "^1.6.0",
     "vuex": "^4.0.1"
   },
   "devDependencies": {

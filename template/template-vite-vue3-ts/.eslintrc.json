@@ -32,7 +32,7 @@
     "defineEmits": "readonly",
     "defineExpose": "readonly",
     "vconsole": "readonly",
-    "LocalTango": "readonly"
+    "localTango": "readonly"
   },
   "rules": {
     "@typescript-eslint/no-unused-vars": "error",
@@ -42,11 +42,13 @@
     "quotes": ["warn", "single"],
     /* 允许使用any类型 */
     "@typescript-eslint/no-explicit-any": ["off"],
-    /* 允许最多3个属性排列一行 */
+    /* 允许最多5个属性排列一行 */
     "vue/max-attributes-per-line": ["error", {
-      "singleline": 3,
+      "singleline": 5,
       "multiline": { "max": 1, "allowFirstLine": false }
     }],
+    /* 标签内容必须单独一行 */
+    "vue/singleline-html-element-content-newline": "off",
     /* 函数必须显示声明返回类型 */
     "@typescript-eslint/explicit-module-boundary-types": ["off"]
   }

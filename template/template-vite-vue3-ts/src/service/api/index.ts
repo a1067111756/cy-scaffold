@@ -4,7 +4,7 @@
 */
 const install = (app: any) => {
   // api集合
-  let apiList: any = {}
+  const apiList: any = {}
 
   // 查找文件
   const modules = import.meta.globEager('./modules/*.ts')

@@ -13,7 +13,7 @@
     // 启用所有严格类型检查选项。
     "strict": true,
     // 生成相应的 .map文件。
-    "sourceMap": true,
+    "sourceMap": false,
     // 指定ECMAScript目标版本
     "target": "esnext",
     // 指定生成哪个模块系统代码
