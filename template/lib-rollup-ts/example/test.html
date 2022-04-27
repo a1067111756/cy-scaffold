@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>rollup打包测试</title>
+  <script src="../dist/bundle.umd.js"></script>
+  <style>
+    p {
+        text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <p id="es">调用es打包结果：×</p>
+  <p id="umd">调用umd打包结果：×</p>
+
+  <script>
+    const el = document.getElementById('umd')
+    if (Object.prototype.toString.call(RollupLib?.sum) === '[object Function]') {
+        console.log('调用umd打包结果：√')
+        el.innerText = '调用umd打包结果：√'
+    } else {
+        console.log('调用umd打包结果：×')
+        el.innerText = '调用umd打包结果：×'
+    }
+  </script>
+
+  <script type="module">
+    import { sum } from '../dist/bundle.es.js'
+
+    const el = document.getElementById('es')
+    if (Object.prototype.toString.call(sum) === '[object Function]') {
+        console.log('调用es打包结果：√')
+        el.innerText = '调用es打包结果：√'
+    } else {
+        console.log('调用es打包结果：×')
+        el.innerText = '调用es打包结果：×'
+    }
+  </script>
+</body>
+</html>
