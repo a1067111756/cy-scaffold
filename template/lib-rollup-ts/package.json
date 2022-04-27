@@ -1,5 +1,5 @@
 {
-  "name": "ts-lib",
+  "name": "rollup-lib",
   "version": "0.0.1",
   "author": "chengyu",
   "license": "MIT",
@@ -18,9 +18,8 @@
   ],
   "keywords": [],
   "scripts": {
-    "dev": "rollup -wc rollup.config.dev.js && npm run build-types",
-    "prod": "rollup -c rollup.config.prod.js && npm run build-types",
-    "build-types": "node types-excutor.mjs",
+    "dev": "rollup -wc rollup.config.dev.js",
+    "build": "rollup -c rollup.config.prod.js",
     "ts:check": "tsc --noEmit -p ./tsconfig.json",
     "lint:check": "eslint --ext .js,.ts,.vue,.jsx,.tsx src",
     "lint:fix": "eslint --fix --ext .js,.ts,.vue,.jsx,.tsx src",

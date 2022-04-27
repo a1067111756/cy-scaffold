@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>vite库导出测试</title>
+  <script type="importmap">
+  {
+    "imports": {
+      "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+    }
+  }
+</script>
+</head>
+<body>
+  <div id="app">
+    <Example />
+  </div>
+
+  <script type="module">
+      import { createApp } from 'vue'
+      import ViteLib from '../dist/bundle.es.js'
+
+      createApp({}).use(ViteLib).mount('#app')
+  </script>
+</body>
+</html>

@@ -10,3 +10,10 @@ import '@/common/style/index.scss'
 
 // element样式
 import 'element-plus/dist/index.css'
+
+// 引入iconfont图标
+import '@/assets/iconfont/iconfont.js'
+import '@/assets/iconfont/iconfont.css'
+
+// 引入本地svg图标
+import 'virtual:svg-icons-register'

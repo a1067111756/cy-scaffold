@@ -1,37 +1,47 @@
 {
-  "name": "venus2d-map-provider",
-  "version": "0.0.1",
-  "license": "MIT",
+  "name": "vite-lib",
+  "version": "0.0.2",
   "author": "chengyu",
-  "description": "a map provider plugin for venus3d base cesium",
-  "main": "./dist/venus2d-map-provider.umd.js",
-  "module": "./dist/venus2d-map-provider.es.js",
-  "types": "./dist/index.d.ts",
+  "license": "MIT",
+  "main": "./dist/bundle.umd.js",
+  "module": "./dist/bundle.es.js",
+  "types": "./dist/types/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/venus2d-map-provider.es.js",
-      "require": "./dist/venus2d-map-provider.umd.js"
+      "import": "./dist/bundle.es.js",
+      "require": "./dist/bundle.umd.js"
     }
   },
+  "files": [
+    "dist"
+  ],
+  "keywords": [],
   "scripts": {
-    "build-types": "node ./script/types-excutor.js",
-    "build": "vue-tsc --noEmit && vite build && npm run build-types",
-    "typecheck": "vue-tsc --noEmit"
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "build-watch": "vite build --watch",
+    "ts:check": "tsc --noEmit -p ./tsconfig.json",
+    "lint:check": "eslint --ext .js,.ts,.vue,.jsx,.tsx package",
+    "lint:fix": "eslint --fix --ext .js,.ts,.vue,.jsx,.tsx package"
   },
   "dependencies": {
-    "cesium": "^1.87.1",
-    "vue": "^3.2.22"
+    "vue": "^3.2.25"
   },
   "devDependencies": {
-    "@types/node": "^16.11.9",
-    "@typescript-eslint/eslint-plugin": "^5.4.0",
-    "@typescript-eslint/parser": "^5.4.0",
-    "@vitejs/plugin-vue": "^1.9.4",
-    "@vue/compiler-sfc": "^3.2.22",
-    "eslint": "^8.3.0",
-    "eslint-plugin-vue": "^8.1.1",
-    "typescript": "^4.5.2",
-    "vite": "^2.4.4",
-    "vue-tsc": "^0.29.6"
+    "@types/node": "^17.0.23",
+    "@typescript-eslint/eslint-plugin": "^5.17.0",
+    "@typescript-eslint/parser": "^5.17.0",
+    "@vitejs/plugin-vue": "^2.3.0",
+    "eslint": "^8.12.0",
+    "eslint-plugin-vue": "^8.5.0",
+    "fs-extra": "^10.0.1",
+    "hash-generator": "^0.1.0",
+    "rollup-plugin-visualizer": "^5.6.0",
+    "sass": "^1.49.10",
+    "sass-loader": "^12.6.0",
+    "typescript": "^4.5.4",
+    "vite": "^2.9.0",
+    "vite-plugin-dts": "^1.1.1",
+    "vue-tsc": "^0.29.8"
   }
 }

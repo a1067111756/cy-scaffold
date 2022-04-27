@@ -45,7 +45,7 @@ const handleStatusCodeOpt = (status: number) => {
 }
 
 // 接口响应码表
-const INTERFACE_CORRECT_CODE = '000000'
+const INTERFACE_CORRECT_CODE = '00000'
 const INTERFACE_ERROR_MESSAGE = {
 }
 

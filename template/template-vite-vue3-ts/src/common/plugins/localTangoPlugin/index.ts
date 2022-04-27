@@ -5,7 +5,7 @@ import localTango from 'local-tango'
 const install = (): void => {
   localTango.config({
     driver: 'localStorage',
-    encrypt: true,
+    encrypt: false,
     encryptKey: 'local_tango_encrypt_key'
   })
 }

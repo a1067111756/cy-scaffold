@@ -18,6 +18,7 @@
     "local-tango": "^0.0.4",
     "mitt": "^3.0.0",
     "normalize.css": "^8.0.1",
+    "purge-icon-vue3": "^0.0.3",
     "vue": "^3.0.5",
     "vue-router": "4",
     "vue3-lottie": "^1.6.0",
@@ -39,6 +40,7 @@
     "unplugin-auto-import": "^0.6.0",
     "unplugin-vue-components": "^0.17.18",
     "vite": "^2.3.4",
+    "vite-plugin-svg-icons": "^2.0.1",
     "vite-plugin-windicss": "^1.7.0",
     "vue-tsc": "^0.0.24",
     "windicss": "^3.4.3"

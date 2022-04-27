@@ -24,5 +24,5 @@ ___
 ### 模板使用
 ```
     npm i
-    npm run dev
+    npm run build
 ```

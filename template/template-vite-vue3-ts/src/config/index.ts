@@ -10,7 +10,7 @@ import componentConfig from '@/config/component.config'
 // 全局样式引入
 import '@/config/style.config'
 
-
+// 配置注册
 const install = (app: App) => {
   app
     // 注册全局store

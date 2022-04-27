@@ -2,6 +2,7 @@
 import type { ComponentCustomProperties } from 'vue'
 import type { Store } from 'vuex'
 import type { Router } from 'vue-router'
+import type { Emitter } from 'mitt'
 
 declare module '*.vue' {
   import { DefineComponent } from 'vue'
@@ -14,6 +15,7 @@ declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
     $store: Store,
     $router: Router,
+    $mittBus: Emitter,
     $filters: {
       covNum (str: string): number
     }

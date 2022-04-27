@@ -1,5 +1,11 @@
 {
   "compilerOptions": {
+    // 生成相关的 '.d.ts' 文件
+    "declaration": true,
+    // '.d.ts' 文件输出目录
+    "declarationDir": "./types",
+    // 打包输出目录
+    "outDir": "./dist",
     // 允许从没有设置默认导出的模块中默认导入。这并不影响代码的输出，仅为了类型检查。
     "allowSyntheticDefaultImports": true,
     "suppressImplicitAnyIndexErrors": true,
@@ -12,7 +18,7 @@
     // 启用所有严格类型检查选项。
     "strict": true,
     // 生成相应的 .map文件。
-    "sourceMap": true,
+    "sourceMap": false,
     // 指定ECMAScript目标版本
     "target": "esnext",
     // 指定生成哪个模块系统代码

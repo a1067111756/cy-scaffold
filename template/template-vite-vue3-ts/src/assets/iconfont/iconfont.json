@@ -1,0 +1,23 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "29095570",
+      "name": "公交车车站站台",
+      "font_class": "gongjiaochechezhanzhantai",
+      "unicode": "e8db",
+      "unicode_decimal": 59611
+    },
+    {
+      "icon_id": "29095627",
+      "name": "灯泡，主意，创新",
+      "font_class": "a-dengpaozhuyichuangxin",
+      "unicode": "e8de",
+      "unicode_decimal": 59614
+    }
+  ]
+}
