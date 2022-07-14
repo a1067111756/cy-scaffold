@@ -1,0 +1,72 @@
+{
+  "pages": [
+		{
+		  "path": "pages/home/index",
+		  "style": {
+		    "navigationBarTitleText": "主页"
+		  }
+		},
+		{
+		  "path": "pages/plugin/index",
+		  "style": {
+		    "navigationBarTitleText": "插件"
+		  }
+		},
+		{
+		  "path": "pages/other/index",
+		  "style": {
+		    "navigationBarTitleText": "其它"
+		  }
+		},
+		{
+		  "path": "pages/exception/404/index",
+		  "style": {
+		    "navigationBarTitleText": "未找到页面"
+		  }
+		},
+		{
+		  "path": "pages/exception/401/index",
+		  "style": {
+		    "navigationBarTitleText": "无访问权限"
+		  }
+		}
+  ],
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#3cc51f",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [
+			{
+				"pagePath": "pages/home/index",
+				"iconPath": "./static/images/tabbar/icon-tab1-normal.png",
+				"selectedIconPath": "./static/images/tabbar/icon-tab1-selected.png",
+				"text": "主页"
+			},
+			{
+				"pagePath": "pages/plugin/index", 
+				"iconPath": "./static/images/tabbar/icon-tab2-normal.png",
+				"selectedIconPath": "./static/images/tabbar/icon-tab2-selected.png",
+				"text": "插件"
+			},
+			{
+				"pagePath": "pages/other/index", 
+				"iconPath": "./static/images/tabbar/icon-tab3-normal.png",
+				"selectedIconPath": "./static/images/tabbar/icon-tab3-selected.png",
+				"text": "其它"
+			}
+		]
+	},
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-脚手架",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "easycom": {
+    "custom": {
+		"^global-(.*)": "@/common/components/global-$1/index.vue",
+		"^u-(.*)": "vk-uview-ui/components/u-$1/u-$1.vue"
+    }
+  }
+}
