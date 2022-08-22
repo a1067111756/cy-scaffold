@@ -1,12 +1,17 @@
-import { createStore } from 'vuex'
-import getters from './getter'
-import example from './modules/example'
+/* 全局 - store - 注册入口 */
+import type { App } from 'vue'
+import extendPlugin from './extendPlugin'
+import { createPinia } from 'pinia';
 
-const store = createStore({
-  getters,
-  modules: {
-    example
-  }
-})
+// store实例
+export const store = createPinia();
 
-export default store
+const install = (app: App): void => {
+  // 注册store
+  app.use(store)
+
+  // 扩展store功能
+  app.use(extendPlugin)
+}
+
+export default install

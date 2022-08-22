@@ -1,33 +1,22 @@
-/* store样例 */
-import type {ActionContext} from 'vuex';
+import { defineStore } from 'pinia';
 
-// state声明
-export interface IStateModel {
-  count: number
+interface ExampleState {
+  count: number;
 }
 
-// 状态
-const state: IStateModel = {
-  count: 0
-}
-
-// 突变
-const mutations = {
-  ADD_COUNT: (state: IStateModel) => {
-    state.count++
-  }
-}
-
-// 操作
-const actions = {
-  addCount: (context: ActionContext<IStateModel, any>) => {
-    context.commit('ADD_COUNT')
-  }
-}
-
-export default {
-  namespaced: true,
-  state,
-  mutations,
-  actions
-}
+export const useExampleStore = defineStore({
+	id: 'example',
+  state: (): ExampleState => ({
+    count: 0
+  }),
+  getters: {
+    getDoubleCount(): number {
+      return this.count * 2
+		}	
+  },
+	actions: {
+		setCount(): void {
+			this.count = this.count + 1
+		}
+	}
+})

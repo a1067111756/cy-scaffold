@@ -13,8 +13,7 @@ const install = (app: any) => {
   for (const fileName in modules) {
     const splitFileName = fileName.split('/')
     const apiKey: string = splitFileName[splitFileName.length - 1].slice(0, -3)
-    const apiValue: object = modules[fileName]
-    apiList[apiKey] = apiValue
+    apiList[apiKey] = modules[fileName]
   }
 
   // 将api集合挂载到$api属性

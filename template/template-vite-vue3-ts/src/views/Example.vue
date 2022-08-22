@@ -20,8 +20,8 @@
     <el-card shadow="hover">
       <template #header>
         <div class="flex justify-between items-center">
-          <span>集成vuex</span>
-          <div @click="openLink('https://vuex.vuejs.org/zh/index.html')">
+          <span>集成pinia</span>
+          <div @click="openLink('https://pinia.web3doc.top/')">
             <PurgeIcon class="cursor-pointer hover:text-[#409eff]" icon="ep:share" />
           </div>
         </div>
@@ -29,8 +29,8 @@
 
       <template #default>
         <div class="mt-20px flex flex-col justify-center items-center">
-          <span>{{ $store.getters.count }}</span>
-          <el-button type="primary" class="mt-10px" @click="$store.dispatch('example/addCount')">点击+1</el-button>
+          <span>{{ $store.example.count }}</span>
+          <el-button type="primary" class="mt-10px" @click="$store.example.setCount()">点击+1</el-button>
         </div>
       </template>
     </el-card>
@@ -180,7 +180,7 @@
 </template>
 
 <script lang="ts" setup>
-import {onMounted, onUnmounted, ref} from 'vue';
+  import {onMounted, onUnmounted, ref} from 'vue';
   import {ElNotification} from 'element-plus';
   import {mittBus} from '@/common/plugins/mittPlugin';
   import {request} from '@/common/plugins/requestPlugin';
@@ -267,7 +267,6 @@ import {onMounted, onUnmounted, ref} from 'vue';
 
   // 事件 - 外链
   const openLink = (link: string) => {
-    console.log('ssssssssss')
     window.open(link)
   }
 

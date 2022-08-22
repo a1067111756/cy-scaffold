@@ -1,6 +1,4 @@
-// eslint-disable-next-line
-import type { ComponentCustomProperties } from 'vue'
-import type { Store } from 'vuex'
+import type { Store } from 'pinia'
 import type { Router } from 'vue-router'
 import type { Emitter } from 'mitt'
 
