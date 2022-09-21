@@ -253,9 +253,9 @@
           footer: unref(getFooterProps),
           ...unref(getExpandOption),
         };
-        if (slots.expandedRowRender) {
-          propsData = omit(propsData, 'scroll');
-        }
+        // if (slots.expandedRowRender) {
+        //   propsData = omit(propsData, 'scroll');
+        // }
 
         propsData = omit(propsData, ['class', 'onChange']);
         return propsData;
@@ -404,10 +404,6 @@
     .ant-table {
       width: 100%;
       overflow-x: hidden;
-
-      .ant-table-body {
-        overflow: auto !important;
-      }
 
       &-title {
         display: flex;

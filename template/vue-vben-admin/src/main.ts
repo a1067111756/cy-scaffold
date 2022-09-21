@@ -15,17 +15,12 @@ import { setupGlobDirectives } from '/@/directives';
 import { setupI18n } from '/@/locales/setupI18n';
 import { registerGlobComp } from '/@/components/registerGlobComp';
 
-import componentInstall from '/@/framework/components/index';
-
 async function bootstrap() {
   const app = createApp(App);
 
   // Configure store
   // 配置 store
   setupStore(app);
-
-  // 注册框架全局组件
-  app.use(componentInstall);
 
   // Initialize internal system configuration
   // 初始化内部系统配置

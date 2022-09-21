@@ -1,6 +1,5 @@
-/* 系统页面 - 关于页 */
 <template>
-  <GlobalPageWrapper title="关于" :contentFullHeight="false">
+  <PageWrapper title="关于">
     <template #headerContent>
       <div class="flex justify-between items-center">
         <span class="flex-1">
@@ -10,50 +9,28 @@
         </span>
       </div>
     </template>
-
-    <GlobalDescription @register="infoRegister" class="enter-y" />
-    <GlobalDescription @register="register" class="my-4 enter-y" />
-    <GlobalDescription @register="registerDev" class="enter-y" />
-  </GlobalPageWrapper>
+    <Description @register="infoRegister" class="enter-y" />
+    <Description @register="register" class="my-4 enter-y" />
+    <Description @register="registerDev" class="enter-y" />
+  </PageWrapper>
 </template>
-
 <script lang="ts" setup>
   import { h } from 'vue';
   import { Tag } from 'ant-design-vue';
-  import { DescItem, useDescription } from '/@/framework/components/Description/index';
+  import { PageWrapper } from '/@/components/Page';
+  import { Description, DescItem, useDescription } from '/@/components/Description/index';
   import { GITHUB_URL, SITE_URL, DOC_URL } from '/@/settings/siteSetting';
 
-  // 依赖信息 - package.json
   const { pkg, lastBuildTime } = __APP_INFO__;
+
   const { dependencies, devDependencies, name, version } = pkg;
 
-  /* 生产依赖 */
   const schema: DescItem[] = [];
-  Object.keys(dependencies).forEach((key) => {
-    schema.push({ field: key, label: key });
-  });
-  const [register] = useDescription({
-    title: '生产环境依赖',
-    data: dependencies,
-    schema: schema,
-    column: 3,
-  });
-
-  /* 开发依赖 */
   const devSchema: DescItem[] = [];
-  Object.keys(devDependencies).forEach((key) => {
-    devSchema.push({ field: key, label: key });
-  });
-  const [registerDev] = useDescription({
-    title: '开发环境依赖',
-    data: devDependencies,
-    schema: devSchema,
-    column: 3,
-  });
 
-  /* 项目信息 */
   const commonTagRender = (color: string) => (curVal) => h(Tag, { color }, () => curVal);
   const commonLinkRender = (text: string) => (href) => h('a', { href, target: '_blank' }, text);
+
   const infoSchema: DescItem[] = [
     {
       label: '版本',
@@ -81,6 +58,7 @@
       render: commonLinkRender('Github'),
     },
   ];
+
   const infoData = {
     version,
     lastBuildTime,
@@ -88,6 +66,29 @@
     preview: SITE_URL,
     github: GITHUB_URL,
   };
+
+  Object.keys(dependencies).forEach((key) => {
+    schema.push({ field: key, label: key });
+  });
+
+  Object.keys(devDependencies).forEach((key) => {
+    devSchema.push({ field: key, label: key });
+  });
+
+  const [register] = useDescription({
+    title: '生产环境依赖',
+    data: dependencies,
+    schema: schema,
+    column: 3,
+  });
+
+  const [registerDev] = useDescription({
+    title: '开发环境依赖',
+    data: devDependencies,
+    schema: devSchema,
+    column: 3,
+  });
+
   const [infoRegister] = useDescription({
     title: '项目信息',
     data: infoData,

@@ -1,9 +1,8 @@
-/* 路由配置 */
-
-import type { App } from 'vue';
 import type { RouteRecordRaw } from 'vue-router';
-import { basicRoutes } from './routes';
+import type { App } from 'vue';
+
 import { createRouter, createWebHashHistory } from 'vue-router';
+import { basicRoutes } from './routes';
 
 // 白名单应该包含基本静态路由
 const WHITE_NAME_LIST: string[] = [];

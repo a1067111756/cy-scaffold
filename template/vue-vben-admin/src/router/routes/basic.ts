@@ -31,7 +31,6 @@ export const PAGE_NOT_FOUND_ROUTE: AppRouteRecordRaw = {
   ],
 };
 
-// 重定向路由
 export const REDIRECT_ROUTE: AppRouteRecordRaw = {
   path: '/redirect',
   component: LAYOUT,
@@ -54,7 +53,6 @@ export const REDIRECT_ROUTE: AppRouteRecordRaw = {
   ],
 };
 
-// 错误日志页路由
 export const ERROR_LOG_ROUTE: AppRouteRecordRaw = {
   path: '/error-log',
   name: 'ErrorLog',
