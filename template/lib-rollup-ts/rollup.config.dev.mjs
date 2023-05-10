@@ -1,4 +1,4 @@
-import path from "path"
+import path from 'path'
 import json from '@rollup/plugin-json'
 import babel from '@rollup/plugin-babel'
 import commonjs from '@rollup/plugin-commonjs'

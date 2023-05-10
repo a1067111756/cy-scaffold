@@ -30,7 +30,7 @@ export default {
   },
 
   // 测试环境
-  testEnvironment: "jsdom",
+  testEnvironment: "jest-environment-jsdom",
 
   // 转换忽略
   transformIgnorePatterns: [
@@ -48,7 +48,10 @@ export default {
   ],
 
   // jest测试模拟环境的地址
-  testURL: 'http://localhost/',
+  testEnvironmentOptions: {
+    html: '<html lang="zh-cmn-Hant"></html>',
+    urls: 'http://localhost/'
+  },
 
   // jest测试监听提示插件
   watchPlugins: [
