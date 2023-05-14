@@ -6,7 +6,7 @@ export * from './Example'
 // 用于全局注册
 const install = (app: App) => {
   // 查找文件
-  const modules = import.meta.globEager('./**/index.ts')
+  const modules: Record<string, any> = import.meta.globEager('./**/index.ts')
 
   // 自动调用index.ts脚本下的注册方法
   for (const fileName in modules) {
